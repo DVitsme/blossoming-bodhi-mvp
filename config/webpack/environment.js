@@ -23,21 +23,21 @@ environment.loaders.keys().forEach((loaderName) => {
   loader.use.forEach(hotfixPostcssLoaderConfig);
 });
 
-environment.loaders.append('expose', {
-  test: require.resolve('jquery'),
-  loader: 'expose-loader',
-  options: {
-    exposes: ['$', 'jquery'],
-  },
-});
-environment.plugins.append(
-  'Provide',
-  new webpack.ProvidePlugin({
-    $: 'jquery',
-    jQuery: 'jquery',
-    'window.jQuery': 'jquery',
-    Popper: ['popper.js', 'default'],
-  })
-);
+// environment.loaders.append('expose', {
+//   test: require.resolve('jquery'),
+//   loader: 'expose-loader',
+//   options: {
+//     exposes: ['$', 'jquery'],
+//   },
+// });
+// environment.plugins.append(
+//   'Provide',
+//   new webpack.ProvidePlugin({
+//     $: 'jquery',
+//     jQuery: 'jquery',
+//     'window.jQuery': 'jquery',
+//     Popper: ['popper.js', 'default'],
+//   })
+// );
 
 module.exports = environment;
